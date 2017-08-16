@@ -14,6 +14,7 @@ namespace AutoHostess
         DateTime expectedTime;
         int persons;
 
+        
         public Booking()
         {
 
@@ -53,7 +54,9 @@ namespace AutoHostess
 
         public DateTime SetEndTime()
         {
-            endTime = startTime + expectedTime;
+            endTime = startTime.AddHours(expectedTime.Hour);
+            endTime = startTime.AddMinutes(expectedTime.Minute);
+            
             return endTime;
         }
 

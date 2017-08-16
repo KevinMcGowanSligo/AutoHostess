@@ -13,7 +13,7 @@ namespace AutoHostess
         Booking[] bookings;
         int preference;
 
-        public Table(int TableNumber, int Seats, int Preference)
+        public Table(int TableNumber, int Seats)
         {
             tableNumber = TableNumber;
             seats = Seats;
