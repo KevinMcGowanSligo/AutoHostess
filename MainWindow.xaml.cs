@@ -21,6 +21,15 @@ namespace AutoHostess
     public partial class MainWindow : Window
     {
         Table[] tables;
+        int hour;
+        int minutes;
+        DateTime startTime;
+        int persons;
+        string name;
+        Booking booking;
+
+        List<Booking> allBookings = new List<Booking>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,12 +37,20 @@ namespace AutoHostess
 
         private void btnBookTable_Click(object sender, RoutedEventArgs e)
         {
+            hour = Convert.ToInt16(tbHours.Text);
+            minutes = Convert.ToInt16(tbMinutes.Text);
+            name = tbName.Text;
+            persons = Convert.ToInt16(tbNumberPersons.Text);
+            TimeSpan ts = new TimeSpan(hour, minutes, 0);
+            startTime = startTime.Date + ts;
+            booking = new Booking(name, startTime, persons);
 
         }
 
         private Table[] CreateTables()
         {
             //create all tables array should have one less then the last prefered table.
+            //this should eventually be a database of tables that we can can work with easier
 
             tables[0] = new Table(12, 2);
             tables[1] = new Table(18, 2);
