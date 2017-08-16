@@ -1,0 +1,15 @@
+D:\Programming\AutoHostess\AutoHostess\bin\Debug\AutoHostess.exe.config
+D:\Programming\AutoHostess\AutoHostess\bin\Debug\AutoHostess.exe
+D:\Programming\AutoHostess\AutoHostess\bin\Debug\AutoHostess.pdb
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.csprojResolveAssemblyReference.cache
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\MainWindow.g.cs
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\App.g.cs
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess_MarkupCompile.cache
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess_MarkupCompile.lref
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\MainWindow.baml
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.g.resources
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.Properties.Resources.resources
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.csproj.GenerateResource.Cache
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.csproj.CoreCompileInputs.cache
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.exe
+D:\Programming\AutoHostess\AutoHostess\obj\Debug\AutoHostess.pdb
