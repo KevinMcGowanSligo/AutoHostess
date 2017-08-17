@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace AutoHostess
 {
-    class Booking
+    public class Booking
     {
         public string name;
         public DateTime startTime;
         public DateTime endTime;
         TimeSpan expectedTime;
         int persons;
-
         
         public Booking()
         {
@@ -26,7 +25,17 @@ namespace AutoHostess
             this.startTime = startTime;
             this.persons = persons;
             SetExpectedTime();
-            SetEndTime();
+            SetEndTime();           
+
+            
+        }
+
+        public void CheckAvailable()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+
+            }
         }
 
         public TimeSpan SetExpectedTime()

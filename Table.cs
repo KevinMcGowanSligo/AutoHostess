@@ -6,16 +6,27 @@ using System.Threading.Tasks;
 
 namespace AutoHostess
 {
-    class Table
+    public class Table
     {
         public int tableNumber=0;
-        int seats;
-        Booking[] bookings;
+        public int seats;
+        public List<Booking> bookings = new List<Booking>();
+
+        public Table()
+        {
+
+        }
 
         public Table(int TableNumber, int Seats)
         {
             tableNumber = TableNumber;
             seats = Seats;
+        }
+
+        public Booking AddBooking(Booking booking)
+        {
+
+            return booking;
         }
     }
 }

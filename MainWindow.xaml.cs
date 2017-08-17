@@ -20,13 +20,15 @@ namespace AutoHostess
     /// </summary>
     public partial class MainWindow : Window
     {
-        Table[] tables;
+        public Table[] tables;
         int hour;
         int minutes;
         DateTime startTime;
         int persons;
         string name;
         Booking booking;
+
+        Table tempTable;
 
         List<Booking> allBookings = new List<Booking>();
 
@@ -50,6 +52,20 @@ namespace AutoHostess
             //add item to listbox displaying just time in 24hr format using .ToString("H:mm")
             lbDisplay.Items.Add(startTime.ToString("H:mm"));
 
+        }
+
+        private void CheckAvailable()
+        {
+            for (int i = 0; i < tables.Length; i++)
+            {
+                if(tables[i].seats<=persons)
+                {
+                    for (int j = 0; j < tables[i].bookings.Count; j++)
+                    {
+                        //
+                    }
+                }
+            }
         }
 
         private Table[] CreateTables()
