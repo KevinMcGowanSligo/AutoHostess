@@ -26,3 +26,18 @@ Tables are sorted in an order of preference
 23. Table 6 (table for 8)
 
 First draft of sorting is the user enters start time and number of people. Search through the list (which should already be sorted in preference order) checking how many seats on table. If its a match check if its free etc.
+
+Ways bookings can overlap
+Existing booking             |------------------|
+Overlapping Start      |----------|
+Overlapping End                         |---------|
+Subset                         |-----------|
+Superset              |-----------------------------|
+
+if stored in Database 
+
+select *
+from Bookings existingBooking
+where
+    existingBooking.FromDate <= @desiredEndDate and
+    @desiredStartDate <= existingBooking.ThruDate
