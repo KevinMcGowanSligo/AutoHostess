@@ -24,6 +24,7 @@ namespace AutoHostess
         int hour;
         int minutes;
         DateTime startTime;
+        DateTime endTime;
         int persons;
         string name;
         Booking booking;
@@ -39,7 +40,7 @@ namespace AutoHostess
 
         private void btnBookTable_Click(object sender, RoutedEventArgs e)
         {
-            //have to add 24hr for now
+            //in 24hr format for now
             hour = Convert.ToInt16(tbHours.Text);
             minutes = Convert.ToInt16(tbMinutes.Text);
             name = tbName.Text;
@@ -62,9 +63,21 @@ namespace AutoHostess
                 {
                     for (int j = 0; j < tables[i].bookings.Count; j++)
                     {
-                        //
+                        if((booking.startTime >= tables[i].bookings[j].startTime) && (booking.startTime <= tables[i].bookings[j].endTime))
+                        {
+                            //table not free incoming booking is either at the same time or in the range of average wait time
+                            break;
+                        }
+                        else
+                        {
+                            //if not the table is free add the booking to the tables List of bookings
+                            tables[j].bookings.Add(booking);
+                            break;
+                        }
+                        
                     }
                 }
+                
             }
         }
 
