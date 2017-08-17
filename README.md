@@ -27,17 +27,17 @@ Tables are sorted in an order of preference
 
 First draft of sorting is the user enters start time and number of people. Search through the list (which should already be sorted in preference order) checking how many seats on table. If its a match check if its free etc.
 
-Ways bookings can overlap
-Existing booking             |------------------|
-Overlapping Start      |----------|
-Overlapping End                         |---------|
-Subset                         |-----------|
-Superset              |-----------------------------|
-
-if stored in Database 
-
-select *
-from Bookings existingBooking
-where
-    existingBooking.FromDate <= @desiredEndDate and
-    @desiredStartDate <= existingBooking.ThruDate
+Ways bookings can overlap<br />
+Existing booking             |------------------|<br />
+Overlapping Start      |----------|<br />
+Overlapping End                         |---------|<br />
+Subset                         |-----------|<br />
+Superset              |-----------------------------|<br />
+<br />
+if stored in Database <br />
+<br />
+select *<br />
+from Bookings existingBooking<br />
+where<br />
+    existingBooking.FromDate <= @desiredEndDate and<br />
+    @desiredStartDate <= existingBooking.ThruDate<br />
