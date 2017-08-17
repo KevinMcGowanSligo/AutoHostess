@@ -11,7 +11,6 @@ namespace AutoHostess
         public int tableNumber=0;
         int seats;
         Booking[] bookings;
-        int preference;
 
         public Table(int TableNumber, int Seats)
         {

@@ -8,10 +8,10 @@ namespace AutoHostess
 {
     class Booking
     {
-        string name;
-        DateTime startTime;
-        DateTime endTime;
-        DateTime expectedTime;
+        public string name;
+        public DateTime startTime;
+        public DateTime endTime;
+        TimeSpan expectedTime;
         int persons;
 
         
@@ -25,38 +25,37 @@ namespace AutoHostess
             this.name = name;
             this.startTime = startTime;
             this.persons = persons;
+            SetExpectedTime();
+            SetEndTime();
         }
 
-        public DateTime SetExpectedTime()
+        public TimeSpan SetExpectedTime()
         {
+            //set expected seated time to a new timespan (hours, minutes, seconds)
+
             if(persons<=2)
             {
-                expectedTime = expectedTime.AddHours(1);
-                expectedTime = expectedTime.AddMinutes(15);
+                expectedTime = new TimeSpan(1, 30, 0);
             }
-            else if(persons>=4)
+            else if(persons<=4)
             {
-                expectedTime = expectedTime.AddHours(1);
-                expectedTime = expectedTime.AddMinutes(45);
+                expectedTime = new TimeSpan(1, 45, 0);
             }
-            else if(persons>=6)
+            else if(persons<=6)
             {
-                expectedTime = expectedTime.AddHours(2);
-                expectedTime = expectedTime.AddMinutes(0);
+                expectedTime = new TimeSpan(2, 0, 0);
             }
             else if(persons>=10)
             {
-                expectedTime = expectedTime.AddHours(2);
-                expectedTime = expectedTime.AddMinutes(30);
+                expectedTime = new TimeSpan(2, 30, 0);
             }
             return expectedTime;
         }
 
         public DateTime SetEndTime()
         {
-            endTime = startTime.AddHours(expectedTime.Hour);
-            endTime = startTime.AddMinutes(expectedTime.Minute);
-            
+            endTime = startTime.Add(expectedTime);
+
             return endTime;
         }
 

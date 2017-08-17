@@ -37,6 +37,7 @@ namespace AutoHostess
 
         private void btnBookTable_Click(object sender, RoutedEventArgs e)
         {
+            //have to add 24hr for now
             hour = Convert.ToInt16(tbHours.Text);
             minutes = Convert.ToInt16(tbMinutes.Text);
             name = tbName.Text;
@@ -44,6 +45,10 @@ namespace AutoHostess
             TimeSpan ts = new TimeSpan(hour, minutes, 0);
             startTime = startTime.Date + ts;
             booking = new Booking(name, startTime, persons);
+            allBookings.Add(booking);
+
+            //add item to listbox displaying just time in 24hr format using .ToString("H:mm")
+            lbDisplay.Items.Add(startTime.ToString("H:mm"));
 
         }
 
@@ -76,6 +81,14 @@ namespace AutoHostess
             tables[21] = new Table(1, 6);
             tables[22] = new Table(6, 8);
             return tables;
+        }
+
+        private void btnShowBookings_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < allBookings.Count; i++)
+            {
+                lbDisplay.Items.Add(allBookings[i].name+ " Time:" + allBookings[i].startTime.ToString("H:mm") + " " + allBookings[i].endTime.ToString("H:mm"));                
+            }
         }
     }
 
