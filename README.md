@@ -1,9 +1,9 @@
 # autohostess
 
 Tables are sorted in an order of preference
-#1. Table 12 (table for 2)
-#2. Table 18 (table for 2)
-#3. Table 5 (table for 2)
+1. Table 12 (table for 2)
+2. Table 18 (table for 2)
+3. Table 5 (table for 2)
 #4. Table 26 (table for 4)
 #5. Table 17 (table for 2)
 #6. Table 11 (table for 4)
